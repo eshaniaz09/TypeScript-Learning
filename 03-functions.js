@@ -5,10 +5,7 @@ function add(num) {
 }
 add("5");
 console.log(add("5"));
-// in the case of the functions , ts do not recognize the
-// type of the parameter because it is a string and we are adding to it
-// so this will give an error
-// So that it is may be compulsory to use the : type with the name
+// it is may be compulsory to use the : type with the name
 // of the variable to reduce the errors.
 // function add2(num: number) {
 //     return num + 2;
