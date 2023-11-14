@@ -27,4 +27,5 @@ console.log(num1 / num2);  // output: 2
 var lang: string = "TypeScript";
 console.log(`${lang} is a language that extends JavaScript by adding static typing and other features that is more readable and maintainable then javascript`);
 
+console.log("Submitted by Esha");
 

@@ -19,3 +19,4 @@ console.log(num1 / num2); // output: 2
 // 3- Declare a string variable with your favorite programming language, Print the final sentence to the console.
 var lang = "TypeScript";
 console.log(`${lang} is a language that extends JavaScript by adding static typing and other features that is more readable and maintainable then javascript`);
+console.log("Submitted by Esha");
