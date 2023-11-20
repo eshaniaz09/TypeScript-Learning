@@ -7,13 +7,6 @@
 
 // class        interface     any and many more........
 
-// Syntax of ts:
-// let variableName : dataType = value;
-//    or
-//  const variableName : dataType = value;
-
-// lets start with the types of the ts
-
 // 1-string
 // let named: string = "Esha";
 // console.log(named);

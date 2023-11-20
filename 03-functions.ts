@@ -1,10 +1,11 @@
-function add(num) {
+function add(num: number) {
     return num + 2;
 }
 
-add("5");
+// add(5);
 
-console.log(add("5"));
+console.log(add(5));
+export { };
 
 // in the case of the functions , ts do not recognize the
 // type of the parameter because it is a string and we are adding to it
