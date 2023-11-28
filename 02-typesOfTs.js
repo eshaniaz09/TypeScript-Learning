@@ -20,8 +20,8 @@
 // let age: number = 25;
 // console.log(typeof (age));
 // console.log(age);
-// note : we don't node to write the : type in the syntax of ts in some cases
-// cuz ts is very smarter to understand the type and declared by itself
+// note : we don't node to write the : type in the syntax of ts in some cases(declaring variables)
+// cuz ts is very smarter to understand the type and declared by itself(explicity)
 // so the good practice to write the code is:
 //   let mySelf = "esha"
 // but in some cases its compulsory to write the : type in syntax

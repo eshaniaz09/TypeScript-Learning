@@ -1,5 +1,6 @@
 "use strict";
 //Arithmetic Operators
+Object.defineProperty(exports, "__esModule", { value: true });
 //Addition +
 // subtraction -
 // multiplication *
@@ -7,16 +8,11 @@
 // modulus %
 // Exponentiation ** (power)
 // pre-increment  (++num)
-//post-increment (num++)
-var num1 = 10;
-num1++;
-num1++;
-num1++;
-console.log(num1);
-var num2 = 10;
-var r = num2++;
-var r2 = ++num2;
-console.log(num2);
-console.log(r);
-console.log(r2);
-console.log(10);
+//post-increment (num++)x
+// Assignment Operators => = , += , -= , *= , /=
+// Comparison operator
+// Equal to ==, Not equal !=, Greater than >, Less than <, greater than or equal >=, less than or equal <=
+let num1 = 10;
+let num2 = 20;
+let numAns = num1 == num2;
+console.log("🚀 ~ file: 05-Operators.ts:17 ~ numAns:", numAns);

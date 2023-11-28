@@ -1,34 +1,34 @@
 //Arithmetic Operators
 
-//Addition +
-// subtraction -
-// multiplication *
-// division /
-// modulus %
+    //Addition +
+    // subtraction -
+    // multiplication *
+    // division /
+    // modulus %
 // Exponentiation ** (power)
-
-
 // pre-increment  (++num)
-//post-increment (num++)
+//post-increment (num++)x
+// Assignment Operators => = , += , -= , *= , /=
+// Comparison operator
+// Equal to ==, Not equal !=, Greater than >, Less than <, greater than or equal >=, less than or equal <=
+// logical operators
+// && (and), || (or), !(not), ^(XOR)
+//string operators
+// ternary operator ? :
+// bitwise operators
 
-var num1 = 10;
-num1++;
-num1++;
-num1++;
-console.log(num1);
-  
-var num2 = 10;
-var r = num2++;
-var r2 = ++num2;
-console.log(num2);
-console.log(r);
-console.log(r2);
-
-
+let num1: number = 10;
+let num2: number = 9;
+let numAns: boolean = num1 === num2;
+console.log("🚀 ~ file: 05-Operators.ts:17 ~ numAns:", numAns);
 
 
-console.log(10);
 
 
+
+
+
+
+export{}
 
 
