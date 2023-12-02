@@ -87,20 +87,4 @@ let o = 4; //3
 let result = m++ * (--n + m) / (o-- - n); //2*5/2 = 5
 // m?, o?, n?, result?
 console.log(`m=${m} , n=${n} , o=${o} , result=${result}`);
-let unitsConsumed = 300; // You can replace this value with the actual units consumed by the user
-let baseRate = 2; // Assuming a base rate per unit
-let taxRate = 0;
-if (unitsConsumed > 500) {
-    taxRate = 0.25;
-}
-else if (unitsConsumed > 200) {
-    taxRate = 0.15;
-}
-else if (unitsConsumed > 100) {
-    taxRate = 0.10;
-}
-const taxAmount = unitsConsumed * taxRate;
-const totalBill = unitsConsumed * baseRate + taxAmount;
-console.log(`Units Consumed: ${unitsConsumed}`);
-console.log(`Total Bill: $${totalBill.toFixed(2)}`);
 exports.default = {};

@@ -126,29 +126,28 @@ switch (userInputNumber) {
 
 
 //Question-08:
-// - Write a program that takes the number of units consumed by a user if it is greater than 100 then add 10% tax if 
+// - Write a program that takes the number of units consumed by a user if it is greater than 100 then add 10% tax if
 // greater than 200 then add 15 % of tax so on up to if greater than 500 then add 25 % of tax
 // Where the tax amount will be calculated by the amount of bill.
+var units: number = 300;
+var taxRate: number = 0;
 
-let unitsConsumed: number = 300;
-let costPerUnit: number = 2;
-let taxRate: number = 0;
-if (unitsConsumed > 100 && unitsConsumed<=200) {
-    taxRate = (10/unitsConsumed)*100;
-} else if (unitsConsumed > 200 && unitsConsumed <=500) {
-    taxRate = (15/unitsConsumed)*100;
-} else if (unitsConsumed > 500) {
-    taxRate = (25/unitsConsumed)*100;
+if (units <= 100) {
+    console.log("Tax is not applicable as units are less than or equal to 100.");
+} else if (units <= 200) {
+    taxRate = 10;
+} else if (units <= 300) {
+    taxRate = 15;
+} else if (units <= 500) {
+    taxRate = 20;
+} else {
+    taxRate = 25;
 }
-console.log(taxRate);
 
-let taxAmount: number = taxRate *costPerUnit;
-console.log(taxAmount);
+var appliedTax: number = (taxRate / 100) * units;
+var totalBill: number = appliedTax + units;
 
-// let totalBill: number = taxAmount + costPerUnit;
-// console.log(totalBill);
-
-
+console.log(`The tax on ${units} units is ${taxRate}%, so the total bill amount is ${totalBill}.`);
 
 
 // Question-9:
