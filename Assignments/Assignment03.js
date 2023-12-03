@@ -134,68 +134,26 @@ switch (userInputNumber) {
 // - Write a program that takes the number of units consumed by a user if it is greater than 100 then add 10% tax if
 // greater than 200 then add 15 % of tax so on up to if greater than 500 then add 25 % of tax
 // Where the tax amount will be calculated by the amount of bill.
-// // First way....
-// let unitsConsumed: number = 300;
-// let costPerUnit: number = 2;
-// let taxRate: number = 0;
-// if (unitsConsumed > 100 && unitsConsumed<=200) {
-//     taxRate = (0.10/unitsConsumed)*100;
-// } else if (unitsConsumed > 200 && unitsConsumed <=500) {
-//     taxRate = (0.15/unitsConsumed)*100;
-// } else if (unitsConsumed > 500) {
-//     taxRate = (0.25/unitsConsumed)*100;
-// }
-// let taxAmount: number = taxRate * costPerUnit;
-// let totalBill: number = taxAmount * costPerUnit + unitsConsumed;
-// console.log(`The tax on the ${unitsConsumed} units consumed is ${taxRate} and total amount is ${taxAmount}`);
-// another way...
 var units = 300;
+var taxRate = 0;
 if (units <= 100) {
-    console.log("tax is not applicable as units are less than 100.");
+    console.log("Tax is not applicable as units are less than or equal to 100.");
 }
-else if (units > 100 && units <= 200) {
-    var tax = 10;
-    var appliedTax = tax / 100 * units;
-    var tax_Amount = appliedTax + units;
-    console.log(`the tax on ${units} units is 10 percent, so the taxamount is ${tax_Amount}`);
+else if (units <= 200) {
+    taxRate = 10;
 }
-else if (units > 200 && units <= 300) {
-    var tax = 15;
-    var appliedTax = tax / 100 * units;
-    var tax_Amount = appliedTax + units;
-    console.log(`the tax on ${units} units is 15 percent, so the taxamount is ${tax_Amount}`);
+else if (units <= 300) {
+    taxRate = 15;
 }
-else if (units > 300 && units <= 500) {
-    var tax = 20;
-    var appliedTax = tax / 100 * units;
-    var tax_Amount = appliedTax + units;
-    console.log(`the tax on ${units} units is 20 percent, so the taxamount is ${tax_Amount}`);
+else if (units <= 500) {
+    taxRate = 20;
 }
 else {
-    var tax = 25;
-    var appliedTax = tax / 100 * units;
-    var tax_Amount = appliedTax + units;
-    console.log(`the tax on ${units} units is 25 percent, so the taxamount is ${tax_Amount}`);
+    taxRate = 25;
 }
-// another way...
-let unitsConsumed = 300; // You can replace this value with the actual units consumed by the user
-let baseRate = 2; // Assuming a base rate per unit
-let taxRate = 0;
-if (unitsConsumed > 500) {
-    taxRate = 0.25;
-}
-else if (unitsConsumed > 200) {
-    taxRate = 0.15;
-}
-else if (unitsConsumed > 100) {
-    taxRate = 0.10;
-}
-const taxAmount = unitsConsumed * taxRate;
-// console.log(taxAmount);
-const totalBill = unitsConsumed * baseRate + taxAmount;
-// console.log(`Units Consumed: ${unitsConsumed}`);
-// console.log(`Total Bill: $${totalBill.toFixed(2)}`);
-console.log(`The tax amount for ${units} units are $${taxAmount} and the total bill is $${totalBill}`);
+var appliedTax = (taxRate / 100) * units;
+var totalBill = appliedTax + units;
+console.log(`The tax on ${units} units is ${taxRate}%, so the total bill amount is ${totalBill}.`);
 // Question-9:
 // - Write a program that tells if the student is pass or fail based on the attendance greater than 75%, practical marks should greater than 50% and theory marks should be greater than 45%  for passing in a semester.
 let attendance = 90; //out of 100
