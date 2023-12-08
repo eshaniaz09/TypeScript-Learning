@@ -101,21 +101,21 @@ if ((num1 + num2 == num3) || (num1 + num3 == num2) || (num2 + num3 === num1)){
 // switch statements are not use in the case where we have to match the variables
 
 
-var numb1: number = 3;
-var numb2: number = 5;
+var numb_1: number = 3;
+var numb_2: number = 5;
 var operator: string = '+';
 switch (operator) {
     case "+":
-        console.log(`The sum = ${numb1 + numb2}`);
+        console.log(`The sum = ${numb_1 + numb_2}`);
         break;
     case "-":
-        console.log(`The diff = ${numb1 - numb2} `);
+        console.log(`The diff = ${numb_1 - numb_2} `);
         break;
     case "*":
-        console.log(`The multiplication is = ${num1 * numb2}`);
+        console.log(`The multiplication is = ${numb_1 * numb_2}`);
         break;
     case "%":
-        console.log(` The division is = ${numb1 % numb2}`);
+        console.log(` The division is = ${numb_1 % numb_2}`);
         break;
     default:
         console.log("Please Enter the correct Operator");
