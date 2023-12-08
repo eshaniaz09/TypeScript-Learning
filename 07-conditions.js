@@ -94,6 +94,7 @@ else {
 // if else is used for calculations or also less then greater then
 // switch statements are used in the place of compression operator to match the values having different conditions or cases
 // switch statements are not use in the case where we have to match the variables
+// we can only use the  logical operator with switch statement when the value given in switch is true.
 var numb1 = 3;
 var numb2 = 5;
 var operator = '+';
