@@ -94,22 +94,21 @@ else {
 // if else is used for calculations or also less then greater then
 // switch statements are used in the place of compression operator to match the values having different conditions or cases
 // switch statements are not use in the case where we have to match the variables
-// we can only use the  logical operator with switch statement when the value given in switch is true.
-var numb1 = 3;
-var numb2 = 5;
+var numb_1 = 3;
+var numb_2 = 5;
 var operator = '+';
 switch (operator) {
     case "+":
-        console.log(`The sum = ${numb1 + numb2}`);
+        console.log(`The sum = ${numb_1 + numb_2}`);
         break;
     case "-":
-        console.log(`The diff = ${numb1 - numb2} `);
+        console.log(`The diff = ${numb_1 - numb_2} `);
         break;
     case "*":
-        console.log(`The multiplication is = ${num1 * numb2}`);
+        console.log(`The multiplication is = ${numb_1 * numb_2}`);
         break;
     case "%":
-        console.log(` The division is = ${numb1 % numb2}`);
+        console.log(` The division is = ${numb_1 % numb_2}`);
         break;
     default:
         console.log("Please Enter the correct Operator");

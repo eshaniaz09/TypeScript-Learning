@@ -133,3 +133,8 @@ function handleError(errmsg: string): never{
 
 
 // export { };
+
+// we can pass the tree types of parameters in the function=>
+// direct static values like=> 1 ,2 ,3...
+// declared variables
+// function => sum(sub(2,3) , b){} we only use a function as a parameter when the parameter function returns a value

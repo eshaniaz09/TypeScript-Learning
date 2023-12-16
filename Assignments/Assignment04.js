@@ -1,5 +1,4 @@
 "use strict";
-//      https://forms.gle/d49g7ToE2VMhbP4j6
 //Question-1:
 //  - Develop a program that determines the day of the week. From number 1 to 6 for 1 to 5 it should print day name Monday to Friday respectively and for 6 it should print weekend. Do it using switch statement.
 const dayNumber = 2;
@@ -195,15 +194,6 @@ if (numb2 > max_num) {
 }
 if (numb3 > max_num) {
     max_num = numb3;
-}
-if (numb3 > max_num) {
-    max_num = numb3;
-}
-if (numb3 > max_num) {
-    max_num = numb3;
-}
-if (numb4 > max_num) {
-    max_num = numb4;
 }
 if (numb4 > max_num) {
     max_num = numb4;
