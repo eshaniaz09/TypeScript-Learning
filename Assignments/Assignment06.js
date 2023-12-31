@@ -61,16 +61,28 @@ let findFactorial = (num_) => {
 console.log(findFactorial(5)); //5*4*3*2*1
 // Question-6:
 //  - Write a program having an array of numbers if the number is negative it should remove the negative number from the array.
-let positiveArray = [1, 2, 3, 4, -5, 6, 7, 8, 9, 10];
+let positiveArray = [1, 2, -3, 4, -5, -6, 7, -8, 9, -10];
+// Approach 1:
 let i = 0;
-while (i <= positiveArray.length) {
+while (i <= positiveArray.length - 1) {
     if (positiveArray[i] < 0) {
         console.log(`The negative element in the array is: ${positiveArray[i]}`);
         positiveArray.splice(i, 1);
     }
-    i++;
+    else {
+        i++;
+    }
 }
 console.log(positiveArray); // Array after removing the negative number element in the array.
+// Approach 2:
+let positiveArrayS = [1, 2, -3, 4, -5, -6, 7, -8, 9, -10];
+let e = positiveArrayS.length - 1;
+while (e >= 0)
+    if (positiveArrayS[e] < 0) {
+        positiveArrayS.splice(e, 1);
+        e--;
+    }
+console.log(positiveArrayS);
 //Question-7:
 //  - Create a function that takes an array of numbers as parameter. Use a while loop to calculate and return the sum of all the numbers in the array.
 let sumOfArray = (arraY) => {
