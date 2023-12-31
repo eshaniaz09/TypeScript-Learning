@@ -1,5 +1,5 @@
 "use strict";
-// call-back functions=> when we pass the function as a parameter in the function definition
+// call-back functions=> when we pass the function as a parameter in the function.
 let sum3 = (sum2) => {
     return sum2;
 };
@@ -8,7 +8,8 @@ sum3(() => {
     let x = 10;
     let y = 5;
     return x + y;
-});
+});   
+//Here are the some call backs functions 
 //map():
 // one of the callBack function is map(): used to run the loop according to the length of the array
 // also use map in the place of the loops ,map is  also a loop
@@ -64,12 +65,12 @@ let arraYs = [1, -3, -4, 5, 6, -7, 8];
 // // in shortest way=>
 arraYs = arraYs.filter((val) => val > 0).map((val) => val * val);
 console.log(arraYs);
-//Question:1
+//Question:1 Take an array having fruit names. make an another array that contains the fruits names array having five characters 
 let fruitsName = ['Apple', 'Banana', 'Mango', 'orange'];
 let fruitsHavingFiveChar = [];
 fruitsHavingFiveChar = fruitsName.filter((fruitName) => fruitName.length == 5);
 console.log(fruitsHavingFiveChar);
-//Question:2
+//Question:2 take the eng alphabets array. Make another array that contains the vowels alphabets from the alphabet array and capitalize the vowels
 let alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'o', 'u', 'v'];
 let VowelsAlpha = [];
 // VowelsAlpha = alphabets.filter((value:string) => {
