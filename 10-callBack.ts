@@ -9,11 +9,13 @@ sum3(() => {
     return x + y;
 }     
 );
+// One of the mostly used call back function is map().
 
 //map():
-// one of the callBack function is map(): used to run the loop according to the length of the array
+// one of the callBack function is map(): used to run the loop according to the length of the array automatically.
+//The map() function executes a specified function for each item in an iterable. The item is sent to the function as a parameter.
 // also use map in the place of the loops ,map is  also a loop
-// returns the same length of the array
+// Always returns the same length of the array
 // returns the same or updated array
 
 let arrY:number[] = [1, 4, 7];
