@@ -18,13 +18,67 @@ let cars: any[] = [
 console.log(cars[0].color, cars[1].color, cars[2].color);
 
 // defining the custom type of an object
-type carType = { company: string, isUsed: boolean, year: number };
+// for an optional type we use ? with the value in the type of an object
+type carType = { company?: string, isUsed: boolean, year: number };
 let car: carType = {
     company: 'honda',
     isUsed: true,
     year: 2024
 };
-
 console.log(car);
+
+// custom type for the list of cars => carType[]
+let carS:carType[] = [
+    {
+        // company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    }
+    
+]
+// print all the years from array
+for (let index = 0; index < carS.length; index++) {
+    console.log(carS[index].year);
+}
 
 

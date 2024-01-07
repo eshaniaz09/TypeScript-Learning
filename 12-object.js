@@ -23,3 +23,55 @@ let car = {
     year: 2024
 };
 console.log(car);
+// custom type for the list of cars => carType[]
+let carS = [
+    {
+        // company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    },
+    {
+        company: 'honda',
+        isUsed: true,
+        year: 2024
+    }
+];
+// print all the years from array
+for (let index = 0; index < carS.length; index++) {
+    console.log(carS[index].year);
+}
