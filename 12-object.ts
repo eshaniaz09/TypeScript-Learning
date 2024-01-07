@@ -80,5 +80,3 @@ let carS:carType[] = [
 for (let index = 0; index < carS.length; index++) {
     console.log(carS[index].year);
 }
-
-
