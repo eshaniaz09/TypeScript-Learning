@@ -75,3 +75,28 @@ let carS = [
 for (let index = 0; index < carS.length; index++) {
     console.log(carS[index].year);
 }
+let todoList = [
+    { id: 1, text: 'Its CS lecture' },
+    { id: 2, text: 'Its SE lecture' },
+    { id: 3, text: 'Its Islamic lecture' },
+    { id: 4, text: 'Tts English lecture' },
+    { id: 5, text: 'Its SSH lecture' }
+];
+// add a new item in array
+todoList.splice(todoList.length, 0, { id: 6, text: 'Its a break' });
+console.log(todoList);
+// add edit the item of todoList by using the item id
+let editToDoById = 4;
+let editedText = 'The english lecture is off today.';
+todoList.forEach((obj) => {
+    if (obj.id === editToDoById) {
+        obj.text = editedText;
+    }
+});
+console.log(todoList);
+// 3. ⁠del a todo by id from array
+let delId = 5;
+const indeX = todoList.findIndex((todo) => todo.id === delId);
+console.log(indeX);
+todoList.splice(indeX, 1);
+console.log(todoList); // the object having id 5 has been deleted.
