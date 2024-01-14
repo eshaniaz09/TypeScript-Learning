@@ -1,4 +1,8 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// import is used to get the variable from another file
+const _12_object_1 = require("./12-object");
+console.log(_12_object_1.carss);
 // Question 1: Doubling Numbers
 // Given an array of numbers, use the map function to create a new array where each number is doubled.
 const arr = [2, 4, 6, 8];

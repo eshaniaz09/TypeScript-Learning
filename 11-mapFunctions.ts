@@ -1,3 +1,10 @@
+// import is used to get the variable from another file
+import {
+    carss
+} from "./12-object";
+ console.log(carss);
+ 
+
 // Question 1: Doubling Numbers
 // Given an array of numbers, use the map function to create a new array where each number is doubled.
 const arr = [2, 4, 6, 8];
