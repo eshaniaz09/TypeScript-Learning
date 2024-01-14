@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.carss = void 0;
 // object=> an entity containing key and value(a property or a function)
 let obj1 = {
     named: "esha",
@@ -75,6 +77,15 @@ let carS = [
 for (let index = 0; index < carS.length; index++) {
     console.log(carS[index].year);
 }
+// export is used to transfer the data from this file to another file
+// we cannot use export default multiple times
+exports.carss = {
+    model: 'crown',
+    price: 300000,
+    company: 'toyoto',
+    isInsured: false,
+    colors: 'black'
+};
 let todoList = [
     { id: 1, text: 'Its CS lecture' },
     { id: 2, text: 'Its SE lecture' },

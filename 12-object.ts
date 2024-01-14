@@ -81,7 +81,15 @@ for (let index = 0; index < carS.length; index++) {
     console.log(carS[index].year);
 }
 
-
+// export is used to transfer the data from this file to another file
+// we cannot use export default multiple times
+export const carss = {
+    model: 'crown',
+    price: 300000,
+    company: 'toyoto',
+    isInsured: false,
+    colors:'black'
+}
 
 // Question:
 // Make a todo list array.
