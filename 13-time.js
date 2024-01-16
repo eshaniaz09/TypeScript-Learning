@@ -1,5 +1,5 @@
 "use strict";
-// // setTimeout()
+// // setTimeout() is an asynchronous function, meaning that the timer function will not pause execution of other functions in the functions stack.
 // const login = (Homepage: () => void) => {
 //     console.log('loader start');
 //     setTimeout(() => {
@@ -15,11 +15,15 @@
 // }
 // login(home);
 // setInterval() for infinite loop 
-let o = 0;
-const intervalID = setInterval(() => {
-    console.log('login');
-    if (o === 3) {
-        clearInterval(intervalID);
-    }
-    o++;
-}, 1000);
+// let o = 0;
+// const intervalID = setInterval(() => {
+//     console.log('login');
+//     if (o === 3) {
+//         clearInterval(intervalID);
+//     }
+//     o++;
+// }, 1000);
+// promises
+const logiN = new Promise((resolve, reject) => {
+    resolve(logiN);
+});
