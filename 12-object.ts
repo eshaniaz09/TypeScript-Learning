@@ -7,6 +7,7 @@ let obj1 = {
     skillSet: ['java', 'javascript', 'cpp', 'typescript'],
     student: true
 };
+export default obj1;
 //accessing the properties of the object using dot notation.
 console.log('obj1:', obj1.degree);
 // an array also contain objects
@@ -82,7 +83,7 @@ for (let index = 0; index < carS.length; index++) {
 }
 
 // export is used to transfer the data from this file to another file
-// we cannot use export default multiple times
+// we cannot use export default multiple times but we can change the name of the variable of the default export when we import that variable from another file
 export const carss = {
     model: 'crown',
     price: 300000,
