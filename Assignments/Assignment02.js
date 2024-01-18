@@ -1,6 +1,4 @@
-"use strict";
 // -calculate your age based on the current year and your birth year.
-Object.defineProperty(exports, "__esModule", { value: true });
 let currentYear = 2023;
 let myBirthYear = 2004;
 let myAge = currentYear - myBirthYear;
@@ -87,4 +85,4 @@ let o = 4; //3
 let result = m++ * (--n + m) / (o-- - n); //2*5/2 = 5
 // m?, o?, n?, result?
 console.log(`m=${m} , n=${n} , o=${o} , result=${result}`);
-exports.default = {};
+export default {};

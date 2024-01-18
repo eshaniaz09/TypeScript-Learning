@@ -1,4 +1,3 @@
-"use strict";
 //Question 1:
 //  - Develop a program that determines the day of the week. From number 1 to 6 for 1 to 5 it should print day name Monday to Friday respectively and for 6 it should print weekend. Do it using function
 var dayOfWeek = (a) => {
@@ -345,3 +344,4 @@ var gradesOfStudents = (percentAge) => {
     }
 };
 console.log(gradesOfStudents(78));
+export {};

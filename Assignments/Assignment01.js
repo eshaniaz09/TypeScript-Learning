@@ -1,4 +1,3 @@
-"use strict";
 // 1- Declare variables for a person's name, age, and whether they are a student, Print these variables to the console.
 var named = "Eesha Niaz"; // Inferring Types, 
 //take your cursor on the variable name (var named: string)
@@ -20,3 +19,4 @@ console.log(num1 / num2); // output: 2
 var lang = "TypeScript";
 console.log(`${lang} is a language that extends JavaScript by adding static typing and other features that is more readable and maintainable then javascript`);
 console.log("Submitted by Esha");
+export {};

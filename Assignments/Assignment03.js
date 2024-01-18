@@ -1,4 +1,3 @@
-"use strict";
 // Question-01:
 // - Write a program that calculates the percentage. 
 const num = 30;
@@ -195,3 +194,4 @@ else if (percentageScore < 60 && percentageScore >= 50) {
 else {
     console.log(`Grade : ${'F'}`);
 }
+export {};
