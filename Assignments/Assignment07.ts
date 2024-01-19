@@ -2,6 +2,7 @@
 // Note: The output must be shown in different colors for each output of arithmetic operation.
 
 import inquirer from "inquirer";
+import chalk from "chalk";
 
 const answer = await inquirer.prompt([
     {
