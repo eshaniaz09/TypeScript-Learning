@@ -1,10 +1,9 @@
 // Develop a ts calculator application which may perform basic arithmetic operations and take input from users using inquirer
 // Note: The output must be shown in different colors for each output of arithmetic operation.
-
 import inquirer from "inquirer";
 import chalk from "chalk";
 
-console.log(chalk.gray.bold.italic.underline('Calculator'));
+console.log(chalk.red.bold.italic.underline('Calculator'));
 
 
 
@@ -45,16 +44,3 @@ switch (answer.operator) {
         console.log(chalk.green('The answer for the division is: '), chalk.green(result));
         break;
 }
-// async function startAgain() {
-//     do{
-//         await answer();
-//        var again= await inquirer
-//         .prompt ({
-//             type:'input',
-//             name:'restart',
-//             message:'Do you want to continue again? press y or n'
-//         })
-//     }while(again.restart=='Y'|| again.restart=='y'|| again.restart=='yes'||again.restart=='Yes')
-// }
-// startAgain();
-
