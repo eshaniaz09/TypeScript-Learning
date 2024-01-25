@@ -3,7 +3,7 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 
-console.log(chalk.red.bold.italic.underline('Calculator'));
+console.log(chalk.bold.italic.black.underline('Calculator'));
 
 
 
