@@ -1,3 +1,4 @@
+"use strict";
 //Question-1:
 //  - Develop a program that determines the day of the week. From number 1 to 6 for 1 to 5 it should print day name Monday to Friday respectively and for 6 it should print weekend. Do it using switch statement.
 const dayNumber = 2;
@@ -222,4 +223,3 @@ console.log(`${min_num} is the smallest number`);
 // my second approach 
 let smallest_numb = Math.min(numb1, numb2, numb3, numb4, numb5);
 console.log(smallest_numb);
-export {};
