@@ -83,11 +83,11 @@ console.log(student1.userName);
 console.log(student2.userName);
 console.log(student3.userName);
 
-
-interface B{
+// we also extends the interface of the parent class with the child interface 
+interface B extends A{
     rollNumber: number;
 }
-class B extends A{
+class B extends A implements B{
     rollNumber: number;
     constructor(userName: string, email: string, isPerson: boolean,rollNumber: number) {
         super(userName,email,isPerson);
@@ -96,5 +96,68 @@ class B extends A{
 }
 let student1Info = new B('esha', 'eshaniaz5@gmail.com', true, 9);
 
+// let suM<T> = (a:T, b:T)=> {
+//     return a+b;
+// }
+
+// suM<number>(1, 2)
 
 
+// generics => passing any type in the function declaration 
+function suM<T extends string | number>(a: T, b: T): T {
+    if (typeof a === 'number' && typeof b === 'number') {
+        return a + b as T;
+    } else if (typeof a === 'string' && typeof b === 'string') {
+        return a + b as T;
+    } else {
+        throw new Error('Unsupported types for addition');
+    }
+}
+
+console.log(suM<number>(12, 13));       // Works
+console.log(suM<string>('esha', 'niaz'));// Works
+// console.log(suM<boolean>(true, false)); // Compile-time error
+
+
+function returnValue<t, x>(a: t, b: x) {
+    return  b;
+}
+
+returnValue<string, number>('esha', 9);
+returnValue<number, number>(12, 13);
+
+// abstraction=> defining an abstract classes .
+
+// interface hello{
+//     name: string;
+//     claSS:number
+// }
+// class hello implements hello{
+//     name : string ;
+//     constructor(name: string, claSS:number) {
+//         abstract claSS: number;
+//         this.name = name;
+//     }
+// }
+
+// class world extends hello{
+//     rOllNumber: number;
+//     constructor(name: string, claSS: number, rOllNumber: number) {
+//         super(name, claSS);
+//         this.rOllNumber;
+//     }
+// }
+
+// incapsulation => we can incapsulation some properties and functions of the class so that the object of class and child class can not
+// access these properties and functions
+//public => accessible in both obj and child classes(very low incapsulation)
+//private => not accessible in both classes and object only accessible to own class
+//protected => not accessible in the object but accessible in own class and child classes
+
+
+// polymorphism=>  when  the same interface is used by different classes and make the different representations or logics by by these different classes
+
+
+//                 Note
+// type are used with the objects in the functional programming and "interface" is used with the class of an object in 
+// the OOP
