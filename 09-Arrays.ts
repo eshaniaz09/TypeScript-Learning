@@ -46,7 +46,7 @@
 
 // studentsNames.push('hamna', 'zainab');
 // console.log(studentsNames[studentsNames.length - 1]);
-// console.log(studentsNames.push('saqib')); //8 this returns the index number of the new number or string added
+// console.log(studentsNames.push('Malaika')); //8 this returns the index number of the new number or string added
 // let emptyArray: string[] = [];
 // console.log(studentsNames.length-1);
 
@@ -55,7 +55,7 @@
 
 
 // //2- pop() => to remove the number or string from the last of the array , returns the removed value or if there is no value in he array in returns the undefined.
-// studentsNames.pop();// saqib
+// studentsNames.pop();// Malaika
 // studentsNames.pop();//zainab
 // console.log(studentsNames);
 // console.log(studentsNames.pop()); // returns the removed value(hamna)

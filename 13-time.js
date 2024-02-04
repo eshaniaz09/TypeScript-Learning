@@ -19,7 +19,7 @@ const home = () => {
     }, 500);
 };
 login(home);
-// setInterval() for infinite loop 
+// setInterval() for infinite loop , we the condition in setInterval for the specific request
 let o = 0;
 const intervalID = setInterval(() => {
     console.log('login');

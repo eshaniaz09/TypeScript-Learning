@@ -1,3 +1,11 @@
+// In this class we discuss :
+//=> 4 pillars of object oriented programming:
+            //   inheritance
+            // polymorphism
+            // abstraction
+            // incapsulation
+//=> interface
+//=> generics
 class Seat{
     count: number;
     setColor: string;
@@ -160,4 +168,3 @@ returnValue<number, number>(12, 13);
 
 //                 Note
 // type are used with the objects in the functional programming and "interface" is used with the class of an object in 
-// the OOP
