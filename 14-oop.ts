@@ -55,3 +55,46 @@ class shape extends triangle{
 var triangleObj=new triangle(12,12)
 var shapeObj = new shape(12, 13, 13);
 console.log(shapeObj.getArea());
+
+
+// defining the type of the class of an object wih "interface" keyword and use in the class with "implements"
+
+interface A{
+    userName: string,
+    email: string,
+    isPerson: boolean
+}
+
+class A implements A{
+    userName: string;
+    email: string;
+    isPerson: boolean;
+    // email: 'eshaniaz5@gmail.com'
+    constructor(userName: string, email: string, isPerson: boolean) {
+        this.userName = userName;
+        this.email = email;
+        this.isPerson = isPerson;
+    }
+}
+let student1 = new A('esha', 'eshaniaz5@gmail.com', true);
+let student2 = new A('hamna', 'hamna@gmail.com', true);
+let student3 = new A('tehzeeb', 'tehzeeb@gmail.com', true);
+console.log(student1.userName);
+console.log(student2.userName);
+console.log(student3.userName);
+
+
+interface B{
+    rollNumber: number;
+}
+class B extends A{
+    rollNumber: number;
+    constructor(userName: string, email: string, isPerson: boolean,rollNumber: number) {
+        super(userName,email,isPerson);
+        this.rollNumber = rollNumber;
+    }
+}
+let student1Info = new B('esha', 'eshaniaz5@gmail.com', true, 9);
+
+
+

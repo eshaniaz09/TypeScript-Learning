@@ -26,6 +26,7 @@ console.log(carObject);
 // carObject2.coloR = "yellow";bv
 console.log(carObject.coloR);
 console.log(carObject2.coloR);
+// another example
 class triangle {
     constructor(width, height) {
         this.width = width;
@@ -44,3 +45,17 @@ class shape extends triangle {
 var triangleObj = new triangle(12, 12);
 var shapeObj = new shape(12, 13, 13);
 console.log(shapeObj.getArea());
+class A {
+    // email: 'eshaniaz5@gmail.com'
+    constructor(userName, email, isPerson) {
+        this.userName = userName;
+        this.email = email;
+        this.isPerson = isPerson;
+    }
+}
+let student1 = new A('esha', 'eshaniaz5@gmail.com', true);
+let student2 = new A('hamna', 'hamna@gmail.com', true);
+let student3 = new A('tehzeeb', 'tehzeeb@gmail.com', true);
+console.log(student1.userName);
+console.log(student2.userName);
+console.log(student3.userName);
