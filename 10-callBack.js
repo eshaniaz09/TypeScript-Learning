@@ -88,3 +88,5 @@ let VowelsAlpha = [];
 VowelsAlpha = alphabets.filter((value) => value === 'a' || value === 'e' || value === 'i'
     || value === 'o' || value === 'u').map((val) => val.toUpperCase());
 console.log('Vowels are : ', VowelsAlpha);
+var myFunction = f => { this.x = "x" };
+
