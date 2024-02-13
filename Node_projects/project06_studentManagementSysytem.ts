@@ -1,152 +1,225 @@
-// import inquirer from "inquirer";
-
-// let students: string[] = [];
-// let adding = true;
-// while (adding) {
-    
-//     const enrollInputs: {
-//         studentName: string;
-//         Courses: string;
-//         addMoreStudents: boolean;
-// } = await inquirer.prompt([
-//     {
-//         type: 'input',
-//         name: 'studentName',
-//         message: 'Enter the student\'s name:'
-//     },
-//     {
-//         type: 'list',
-//         name: 'Courses',
-//         message: 'select the courses you want to enroll in: ',
-//         choices: ['digital marketing', 'fiver freelancing', 'word press', 'web development']
-//     },
-//     {
-//         type: 'confirm',
-//         name: 'addMoreStudents',
-//         message: 'Do you want to add more students? ',
-//         default: false
-//     },
-// ]);
-
-// const { studentName, Courses, addMoreStudents } = enrollInputs;
-
-// adding = addMoreStudents;
-//     if (studentName && Courses) {
-//     students.push(studentName, Courses);
-// }
-// };
-
-// console.log('students who have taken these courses are :\n' + students);
-// // if (students.length > 0) {
-    
-// //     students.forEach(student => {
-// //         console.log(student);
-        
-// //     });
-// // }
-
-
-class Student {
-    private name: string;
-    private studentID: string;
-    private courses: string[];
-    private balance: number;
-
-    constructor(name: string) {
+//This project is a simple console based Student Management System. In this project you will be learning how to add new students, how to generate a 5 digit unique studentID for each student, how to enroll students in the given courses. Also, you will be implementing the following operations enroll, view balance, pay tuition fees, show status, etc. The status will show all the details of the student including name, id, courses enrolled and balance.This is one of the best projects to implement the Object Oriented Programming concepts.
+import inquirer, {Answers,QuestionCollection} from "inquirer";
+class Course {
+    constructor(public name: string, public fee: number) {
         this.name = name;
-        this.studentID = this.generateStudentID();
-        this.courses = [];
-        this.balance = 0;
+        this.fee = fee;
+    }
+}
+class Student {
+    private static counter : number = 10001
+    public name: string;
+    public fatherName: string;
+    public age: string;
+    public gender: string;
+    public StudentId: number;
+    public courses: Course[] = [];
+    public fee: number = 0;
+    public balance: number = 0;
+
+    constructor(name: string, fatherName: string, age: string, gender: string) {
+        this.name = name;
+        this.fatherName = fatherName;
+        this.age = age;
+        this.gender = gender;
+        this.StudentId = Student.counter++;
     }
 
-    private generateStudentID(): string {
-        return Math.random().toString(36).substr(2, 5).toUpperCase();
-    }
-
-    enrollCourse(course: string): void {
+    enroll(course: Course): void {
         this.courses.push(course);
+        this.balance += course.fee;
     }
 
     viewBalance(): void {
-        console.log(`Balance for ${this.name}: $${this.balance}`);
+        console.log(`Your Balance is ${this.balance}`);
     }
-
-    payTuition(amount: number): void {
-        this.balance -= amount;
-        console.log(`Payment of $${amount} received from ${this.name}.`);
-        this.viewBalance();
+    payTuitionFee(amount: number): void {
+        if (amount <= this.balance) {
+            this.balance -= amount;
+            console.log(
+                `Payment of $ ${amount} received. Your balance is ${this.balance}`
+            );
+        } else {
+            console.log(`Insufficient Balance. Your balance is ${this.balance}`);
+        }
     }
-
     showStatus(): void {
         console.log(`Name: ${this.name}`);
-        console.log(`Student ID: ${this.studentID}`);
-        console.log(`Courses Enrolled: ${this.courses.join(', ')}`);
-        this.viewBalance();
+        console.log(`Father Name: ${this.fatherName}`);
+        console.log(`StudentId: ${this.StudentId}`);
+        console.log(`Age of ${this.age}`);
+        console.log(`Enrolled in following courses :`);
+        this.courses.forEach((course) => console.log(`- ${course.name}`));
+        console.log(`He / She has balance : ${this.balance}`);
     }
 }
 
 class StudentManagementSystem {
-    private students: Map<string, Student>;
-
-    constructor() {
-        this.students = new Map();
+    private students: Student[] = [];
+    private courses: Course[] = [
+        new Course("Computer", 4500),
+        new Course("Science", 6000),
+        new Course("History", 5000),
+    ];
+    private findId(studentId: number) {
+        return this.students.find((student) => student.StudentId === studentId);
+    }
+    async addStudent(): Promise<void> {
+        const questions : QuestionCollection = [
+            {
+                name: "name",
+                type: "input",
+                message: "Enter your name : "
+            },
+            {
+                name: "fatherName",
+                type: "input",
+                message: "Enter your father name : "
+            },
+            {
+                name: "age",
+                type: "Number",
+                message: "Enter your age : "
+            },
+            {
+                name: "gender",
+                type: "list",
+                choices: ["Male", "Female"],
+                message: "Enter your gender : "
+            },
+        ];
+        const answers = await inquirer.prompt(questions)
+        console.log(questions);
+        
+        const newStudent = new Student(
+            answers.name,
+            answers.fatherName,
+            answers.age,
+            answers.gender
+        );
+        this.students.push(newStudent);
+        console.log(
+            `The student ${answers.name}'s admission is confirmed. His/Her StudentId is ${newStudent.StudentId}.\n Now he/she can enroll in any course.`
+        );
     }
 
-    addStudent(name: string): void {
-        const student = new Student(name);
-        this.students.set(student['studentID'], student);
-        console.log(`Student ${name} added with ID ${student['studentID']}`);
-    }
+    async enrollStudent(): Promise<void> {
+        const answers = await inquirer.prompt([{
+            name: "id",
+            type: "number",
+            message: "Please enter your Student Id : ",
+        },
+        {
+            name: "course",
+            type: "list",
+            message: "Please enter the course in which you want to enroll : ",
+            choices: this.courses.map(course => course.name)
+        }])
 
-    enrollStudent(studentID: string, course: string): void {
-        const student = this.students.get(studentID);
+        const student = this.findId(Number(answers.id))
         if (student) {
-            student.enrollCourse(course);
-            console.log(`${student['name']} enrolled in ${course}`);
+            student.enroll(answers.course);
+            console.log(`The student ${student.name} is enrolled in ${answers.course}`);
         } else {
-            console.log(`Student with ID ${studentID} not found.`);
+            console.log("The Student not found");
         }
     }
+    async payStudentFee(): Promise<void> {
+        const answers = await inquirer.prompt([
+            {
+                name: "id",
+                type: "number",
+                message: "Please enter your Student Id : ",
+            },
+            {
+                name: "amount",
+                type: "number",
+                message: "Please enter the fee amount : ",
+            },
+        ]);
 
-    viewStudentBalance(studentID: string): void {
-        const student = this.students.get(studentID);
+        const student = this.findId(Number(answers.id));
+        if (student) {
+            student.payTuitionFee(Number(parseFloat(answers.amount)));
+        } else {
+            console.log("Student not found");
+        }
+    }
+    async viewStudentBalance(): Promise<void> {
+        const answers = await inquirer.prompt([{
+            name: "id",
+            type: "number",
+            message: "Please enter your Student Id : ",
+        }])
+        const student = this.findId(Number(answers.id));
         if (student) {
             student.viewBalance();
         } else {
-            console.log(`Student with ID ${studentID} not found.`);
+            console.log("The student is not found");
         }
+
     }
 
-    payStudentTuition(studentID: string, amount: number): void {
-        const student = this.students.get(studentID);
-        if (student) {
-            student.payTuition(amount);
-        } else {
-            console.log(`Student with ID ${studentID} not found.`);
-        }
-    }
-
-    showStudentStatus(studentID: string): void {
-        const student = this.students.get(studentID);
+    async viewStudentStatus(): Promise<void> {
+        const answers = await inquirer.prompt([{
+            name: "id",
+            type: "number",
+            message: "Please enter your Student Id : ",
+        }])
+        const student = this.findId(Number(answers.id));
         if (student) {
             student.showStatus();
         } else {
-            console.log(`Student with ID ${studentID} not found.`);
+            console.log("The student is not found");
         }
+
+    }
+
+    async viewStudentList():Promise<void> {
+        console.log("| Student Id's       |      Names    |   Father Name  |");
+        console.log("_________________________________________________________");
+        this.students.forEach(student=>console.log(`|   ${student.StudentId}            |       ${student.name}       |       ${student.fatherName}        |`));
+        
     }
 }
 
-// Example usage
-const sms = new StudentManagementSystem();
-sms.addStudent("Alice");
-sms.addStudent("Bob");
 
-sms.enrollStudent("ABC12", "Math");
-sms.enrollStudent("XYZ45", "Science");
+async function main(): Promise<void>{
+    const sms = new StudentManagementSystem();
+while (true){
+const actions = await inquirer.prompt([{name:'action', type: 'list', message: "What you want to do? ", choices: ['Add Student', 'Enroll in Courses', 'Pay fee', 'View Balance', 'View Status', 'View Student List', 'Exit'] }])
 
-sms.payStudentTuition("ABC12", 500);
-sms.payStudentTuition("XYZ45", 300);
+switch(actions.action){
+    case 'Add Student':
+        await sms.addStudent();
+        break;
 
-sms.showStudentStatus("ABC12");
-sms.showStudentStatus("XYZ45");
+    case 'Enroll in Courses':
+        await sms.enrollStudent();
+        break;
+
+    case 'Pay fee':
+        await sms.payStudentFee();
+        break;
+
+    case 'View Balance':
+        await sms.viewStudentBalance();
+        break;
+
+    case 'View Status':
+        await sms.viewStudentStatus();
+        break
+
+    case 'View Student List':
+        await sms.viewStudentList();
+        break   
+    case 'Exit':
+        console.log("Closing the Student Management System")
+        process.exit();
+}
+
+
+}
+}
+main()
 
