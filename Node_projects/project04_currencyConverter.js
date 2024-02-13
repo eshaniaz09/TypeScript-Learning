@@ -1,32 +1,23 @@
 import inquirer from "inquirer";
 let conversion = {
-    "PKR":
-    {
+    "PKR": {
         "USD": 0.0036,
         "GBP": 0.0028,
         "PKR": 1
     },
-    "GBP":
-    {
+    "GBP": {
         "USD": 1.27,
         "PKR": 353.99,
         "GBP": 1
     },
-    "USD":
-    {
+    "USD": {
         "PKR": 279.57,
         "GBP": 0.79,
         "USD": 1
     }
 };
-
 // taking input from user
-
-const userInputs: {
-    from: "PKR" | "GBP" | "USD";
-    to: "PKR" | "GBP" | "USD";
-    amount: number;
-} = await inquirer.prompt([
+const userInputs = await inquirer.prompt([
     {
         type: 'list',
         name: 'from',
@@ -45,15 +36,12 @@ const userInputs: {
         message: 'Your amount to be converted: '
     }
 ]);
-
 // now destructing:
 const { from, to, amount } = userInputs;
-
 if (from && to && amount) {
     const result = conversion[from][to] * amount;
     console.log(`Your conversion from ${from} to ${to} is ${result}`);
-    
-} else {
+}
+else {
     console.log('Invalid parameters');
-    
 }
